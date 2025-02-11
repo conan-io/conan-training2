@@ -11,29 +11,13 @@ int main() {
 #ifdef USE_TABULATE
     Table info;
     info.add_row({
-        "Conan is MIT-licensed",
-        "Open Source package manager",
-    #ifdef NDEBUG
-        "Release configuration"
-    #else
-        "Debug configuration"
-    #endif
+        "Conan is an Open Source package manager"
     });
     info[0][0].format().font_color(Color::green).font_style({FontStyle::bold});
     std::cout << info << std::endl;
 #else
     fmt::print(fmt::fg(fmt::color::cyan) | fmt::emphasis::bold, 
-               "Conan is a MIT-licensed, Open Source ");
-    fmt::print(fmt::fg(fmt::color::white), 
-               "package manager for C and C++ development\n");
-
-    #ifdef NDEBUG
-    fmt::print(fmt::fg(fmt::color::green) | fmt::emphasis::italic,
-               "Release configuration!\n");
-    #else
-    fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::italic,
-               "Debug configuration!\n");
-    #endif
+               "Conan is an Open Source package manager\n");
 #endif
 
     return 0;
