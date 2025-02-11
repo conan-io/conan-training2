@@ -1,5 +1,7 @@
 from conan import ConanFile
 from conan.tools.cmake import cmake_layout, CMakeToolchain, CMakeDeps
+from conan.errors import ConanInvalidConfiguration
+
 
 class FormatterRecipe(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
@@ -20,6 +22,10 @@ class FormatterRecipe(ConanFile):
 
         cd = CMakeDeps(self)
         cd.generate()
+
+    def validate(self):
+        if self.options.with_tabulate and self.settings.build_type == "Debug":
+            raise ConanInvalidConfiguration("Tabulate is not supported in Debug mode.")
 
     def layout(self):
         cmake_layout(self)
