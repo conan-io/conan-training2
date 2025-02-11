@@ -14,7 +14,8 @@ int main() {
         "Conan is MIT-licensed",
         "Open Source package manager",
     });
-    info[0][0].format().font_color(Color::green).font_style({FontStyle::bold});
+    info[0][0].format().font_color(Color::cyan).font_style({FontStyle::bold});
+    info[0][1].format().font_color(Color::white);
     std::cout << info << std::endl;
 #else
     fmt::print(fmt::fg(fmt::color::cyan) | fmt::emphasis::bold, 
