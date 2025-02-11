@@ -19,9 +19,7 @@ int main() {
         "Debug configuration"
     #endif
     });
-    info[0][0].format().font_color(Color::red).font_style({FontStyle::bold});
-    info[0][1].format().font_color(Color::blue).font_style({FontStyle::bold});
-    info[0][2].format().font_color(Color::green).font_style({FontStyle::bold});
+    info[0][0].format().font_color(Color::green).font_style({FontStyle::bold});
     std::cout << info << std::endl;
 #else
     fmt::print(fmt::fg(fmt::color::cyan) | fmt::emphasis::bold, 
