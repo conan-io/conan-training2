@@ -27,6 +27,5 @@ class FormatterRecipe(ConanFile):
         if not self.options.with_std_format:
             self.requires("fmt/11.0.2")
 
-
     def layout(self):
         cmake_layout(self)
