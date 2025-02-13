@@ -7,26 +7,24 @@ from conan.errors import ConanInvalidConfiguration
 class FormatterRecipe(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
-    options = {"with_tabulate": [True, False]}
-    default_options = {"with_tabulate": False}
+    options = {"with_std_format": [True, False]}
+    default_options = {"with_std_format": False}
 
     def validate(self):
-        if (self.options.with_tabulate and
-                valid_min_cppstd(self, 17)):
-            raise ConanInvalidConfiguration("Tabulate requires C++17")
+        if (self.options.with_std_format and
+                not valid_min_cppstd(self, 20)):
+            raise ConanInvalidConfiguration("std::format requires C++20")
 
     def generate(self):
         tc = CMakeToolchain(self)
-        tc.cache_variables["USE_TABULATE"] = self.options.with_tabulate
+        tc.cache_variables["USE_STD_FORMAT"] = self.options.with_std_format
         tc.generate()
 
         cd = CMakeDeps(self)
         cd.generate()
 
     def requirements(self):
-        if self.options.with_tabulate:
-            self.requires("tabulate/1.5")
-        else:
+        if not self.options.with_std_format:
             self.requires("fmt/11.0.2")
 
 

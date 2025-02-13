@@ -1,28 +1,20 @@
-#ifdef USE_TABULATE
-#include <tabulate/table.hpp>
-using namespace tabulate;
+#ifdef USE_STD_FORMAT
+    #include <format>
+    #include <iostream>
 #else
-#include <fmt/core.h>
-#include <fmt/color.h>
+    #include <fmt/core.h>
+    #include <fmt/color.h>
 #endif
 
 int main() {
 
-#ifdef USE_TABULATE
-    Table info;
-    info.add_row({
-        "Conan is MIT-licensed",
-        "Open Source package manager",
-    });
-    info[0][0].format().font_color(Color::cyan).font_style({FontStyle::bold});
-    info[0][1].format().font_color(Color::white);
-    std::cout << info << std::endl;
+#ifdef USE_STD_FORMAT
+    std::cout << std::format("Conan is a MIT-licensed, Open Source package manager for C and C++ development\n");
 #else
     fmt::print(fmt::fg(fmt::color::cyan) | fmt::emphasis::bold, 
                "Conan is a MIT-licensed, Open Source ");
     fmt::print(fmt::fg(fmt::color::white),
                "package manager for C and C++ development\n");
 #endif
-
     return 0;
 }
