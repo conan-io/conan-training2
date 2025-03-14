@@ -7,6 +7,6 @@ compiler.cppstd=gnu14
 compiler.libcxx=libstdc++11
 compiler.version=13
 [buildenv]
-CC=arm-linux-gnueabihf-gcc-13
-CXX=arm-linux-gnueabihf-g++-13
+CC=arm-linux-gnueabihf-gcc-12
+CXX=arm-linux-gnueabihf-g++-12
 LD=arm-linux-gnueabihf-ld
