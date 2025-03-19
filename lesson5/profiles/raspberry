@@ -9,4 +9,3 @@ compiler.version=12
 [buildenv]
 CC=arm-linux-gnueabihf-gcc-12
 CXX=arm-linux-gnueabihf-g++-12
-LD=arm-linux-gnueabihf-ld
