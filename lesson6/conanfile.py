@@ -9,7 +9,7 @@ class FormatterRecipe(ConanFile):
         self.requires("fmt/[~11]")
 
     def build_requirements(self):
-        self.tool_requires("cmake/[>=3.19 <4]")
+        self.tool_requires("cmake/[>=3.23 <4]")
 
     def layout(self):
         cmake_layout(self)
