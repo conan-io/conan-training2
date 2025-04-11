@@ -5,7 +5,7 @@
 #include <fmt/color.h>
 #endif
 
-void hello(){
+void hello() {
     #if USING_FMT == 1
         fmt::print(fg(fmt::color::crimson) | fmt::emphasis::bold, "hello/1.0: Hello World! (with color!)\n");
     #else
