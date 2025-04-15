@@ -49,10 +49,10 @@ class helloRecipe(ConanFile):
         tc = CMakeToolchain(self)
         if self.options.with_fmt:
             tc.cache_variables["WITH_FMT"] = True
-            dep = self.dependencies["fmt"]
-            self.output.info(dep.description)
-            self.output.info(dep.license)
-            self.output.info(dep.cpp_info.libdirs)
+            fmt_dep = self.dependencies["fmt"]
+            self.output.info(fmt_dep.description)
+            self.output.info(fmt_dep.license)
+            self.output.info(fmt_dep.cpp_info.libdirs)
         tc.generate()
 
     def build(self):
