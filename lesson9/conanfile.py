@@ -16,8 +16,14 @@ class helloRecipe(ConanFile):
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False], "with_fmt": [True, False]}
-    default_options = {"shared": False, "fPIC": True, "with_fmt": True}
+
+    options = {"shared": [True, False], 
+               "fPIC": [True, False], 
+               "with_fmt": [True, False]}
+
+    default_options = {"shared": False, 
+                       "fPIC": True, 
+                       "with_fmt": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
@@ -43,10 +49,10 @@ class helloRecipe(ConanFile):
         tc = CMakeToolchain(self)
         if self.options.with_fmt:
             tc.variables["WITH_FMT"] = True
-            fmt_dependency = self.dependencies["fmt"]
-            self.output.highlight(f"FMT Description: {fmt_dependency.description}")
-            self.output.highlight(f"FMT License: {fmt_dependency.license}")
-            self.output.highlight(f"FMT library dirs: {fmt_dependency.cpp_info.libdirs}")
+            dep = self.dependencies["fmt"]
+            self.output.info(dep.description)
+            self.output.info(dep.license)
+            self.output.info(dep.cpp_info.libdirs)
         tc.generate()
 
     def build(self):
