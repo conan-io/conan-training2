@@ -56,4 +56,9 @@ class helloRecipe(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = ["hello"]
+        # Binaries to link
+        self.cpp_info.libs = ["hellolib"]
+        # Directories (values by default)
+        # self.cpp_info.includedirs = ['include']  # Ordered list of include paths
+        # self.cpp_info.libdirs = ['lib']  # Where libraries can be found
+        # self.cpp_info.bindirs = ['bin']  # Where executables and shared libs can be found
