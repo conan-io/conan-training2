@@ -17,15 +17,11 @@ class helloRecipe(ConanFile):
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "include/*"
 
-    # Automatically manage the package ID clearing of settings and options
-    implements = ["auto_header_only"]
-
     def package_id(self):
         self.info.clear()
 
     def layout(self):
         basic_layout(self)
-    
 
     def package(self):
         copy(self, "include/*", self.source_folder, self.package_folder)
@@ -33,4 +29,3 @@ class helloRecipe(ConanFile):
     def package_info(self):
         self.cpp_info.bindirs = []
         self.cpp_info.libdirs = []
-
