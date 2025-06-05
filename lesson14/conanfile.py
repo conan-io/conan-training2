@@ -20,6 +20,9 @@ class helloRecipe(ConanFile):
     # Automatically manage the package ID clearing of settings and options
     implements = ["auto_header_only"]
 
+    def package_id(self):
+        self.info.clear()
+
     def layout(self):
         basic_layout(self)
     
