@@ -3,5 +3,5 @@
 
 
 void mylib() {
-    std::cout << "Hi there! I am developing a new feature for mylib" << std::endl;
+    std::cout << "Hi there! This is mylib" << std::endl;
 }
