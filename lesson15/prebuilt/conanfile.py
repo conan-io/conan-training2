@@ -16,9 +16,11 @@ class helloRecipe(ConanFile):
 
     def package(self):
         copy(self, "*.h", os.path.join(self.build_folder, "include"),
-             os.path.join(self.package_folder, "include"), keep_path=False)
-        copy(self, "*.lib", self.build_folder, os.path.join(self.package_folder, "lib"), keep_path=False)
-        copy(self, "*.a", self.build_folder, os.path.join(self.package_folder, "lib"), keep_path=False)
+            os.path.join(self.package_folder, "include"), keep_path=False)
+        copy(self, "*.lib", self.build_folder,
+            os.path.join(self.package_folder, "lib"), keep_path=False)
+        copy(self, "*.a", self.build_folder,
+            os.path.join(self.package_folder, "lib"), keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = ["hello"]
