@@ -12,7 +12,6 @@ class helloRecipe(ConanFile):
         _os = str(self.settings.os).lower()
         _arch = str(self.settings.arch).lower()
         self.folders.build = os.path.join("vendor_hello_library", _os, _arch)
-        self.folders.source = self.folders.build
 
     def package(self):
         copy(self, "*.h", os.path.join(self.build_folder, "include"),
