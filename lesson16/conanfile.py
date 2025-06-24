@@ -30,9 +30,9 @@ class SecureScannerRecipe(ConanFile):
         copy(self, f"secure_scanner{ext}", self.build_folder,
              os.path.join(self.package_folder, "bin"), keep_path=False)
 
+    def package_info(self):
+        self.buildenv_info.define("MY_VAR", "42")
+
     def package_id(self):
         del self.info.settings.compiler
         del self.info.settings.build_type
-
-    def package_info(self):
-        self.buildenv_info.define("MY_VAR", "42")
