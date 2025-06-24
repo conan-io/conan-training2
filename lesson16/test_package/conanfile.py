@@ -17,4 +17,4 @@ class SecureScannerTestRecipe(ConanFile):
 
     def test(self):
         extension = ".exe" if self.settings_build.os == "Windows" else ""
-        self.run("secure_scanner{} mypath".format(extension))
+        self.run("secure-scanner{} mypath".format(extension))

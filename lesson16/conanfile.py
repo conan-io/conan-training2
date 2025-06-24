@@ -5,7 +5,7 @@ from conan.tools.files import copy
 
 
 class SecureScannerRecipe(ConanFile):
-    name = "secure_scanner"
+    name = "secure-scanner"
     version = "1.0"
     package_type = "application"
 
@@ -27,7 +27,7 @@ class SecureScannerRecipe(ConanFile):
 
     def package(self):
         ext = ".exe" if self.settings_build.os == "Windows" else ""
-        copy(self, f"secure_scanner{ext}", self.build_folder,
+        copy(self, f"secure-scanner{ext}", self.build_folder,
              os.path.join(self.package_folder, "bin"), keep_path=False)
 
     def package_info(self):
