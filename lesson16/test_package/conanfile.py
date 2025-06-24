@@ -1,7 +1,7 @@
 from conan import ConanFile
 
 
-class secure_scannerTestConan(ConanFile):
+class SecureScannerTestRecipe(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def build_requirements(self):

@@ -4,7 +4,7 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
 from conan.tools.files import copy
 
 
-class secure_scannerRecipe(ConanFile):
+class SecureScannerRecipe(ConanFile):
     name = "secure_scanner"
     version = "1.0"
     package_type = "application"

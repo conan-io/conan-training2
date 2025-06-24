@@ -2,3 +2,5 @@
 CMakeUserPresets.json
 */build/*
 */test_package/build
+*conanbuild*.sh
+*conanrun*.sh
