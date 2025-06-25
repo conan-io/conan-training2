@@ -1,4 +1,4 @@
-# Download the toolchain from https://sysprogs.com/getfile/2275/raspberry-gcc12.2.0-r2.exe
+# Download the toolchain (for example https://gnutoolchains.com/raspberry/)
 # Install it and make it available in your path.
 # Then use this as the host profile in the install command:
 # $ conan install . --build missing --profile:build=default --profile:host=./profiles/raspberry-win
