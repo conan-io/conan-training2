@@ -1,0 +1,25 @@
+# Download the toolchain from https://sysprogs.com/getfile/2275/raspberry-gcc12.2.0-r2.exe
+# Install it and make it available in your path.
+# Then use this as the host profile in the install command:
+# $ conan install . --build missing --profile:build=default --profile:host=./profiles/raspberry-win
+
+[settings]
+os=Linux
+arch=armv7hf
+compiler=gcc
+build_type=Release
+compiler.cppstd=gnu14
+compiler.libcxx=libstdc++11
+compiler.version=12
+[buildenv]
+CC=arm-linux-gnueabihf-gcc-12
+CXX=arm-linux-gnueabihf-g++
+LD=arm-linux-gnueabihf-ld
+
+[tool_requires]
+# This will download the Ninja build tool (not needed if it is already install in your system)
+*: ninja/1.12.1
+
+[conf]
+# This will set the Ninja as the generator for CMake
+tools.cmake.cmaketoolchain:generator=Ninja
