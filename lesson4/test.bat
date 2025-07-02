@@ -8,11 +8,12 @@ cmake --version
 REM By activating the conanbuild environment, the new cmake version will correspond to the one listed in build requirements
 
 REM Windows
+
 build\Release\generators\conanbuild.bat
 
 cmake --version
 
-cmake --preset=conan-release
+cmake --preset=conan-default
 cmake --build --preset=conan-release
 
 REM Windows
