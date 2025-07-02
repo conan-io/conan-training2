@@ -8,21 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Test on ${{ matrix.os }} - Lesson ${{ matrix.lesson }}
-    runs-on: ${{ matrix.os }}
+  test-linux:
+    name: Test on Linux
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - os: ubuntu-latest
-            shell: bash
-            test_script: test.sh
-          - os: macos-latest
-            shell: bash
-            test_script: test.sh
-          - os: windows-latest
-            shell: cmd
-            test_script: test.bat
         lesson: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
@@ -35,7 +25,51 @@ jobs:
       uses: conan-io/setup-conan@latest
       
     - name: Run test for lesson ${{ matrix.lesson }}
-      shell: ${{ matrix.shell }}
       run: |
         cd lesson${{ matrix.lesson }}
-        ${{ matrix.test_script }} 
+        chmod +x test.sh
+        ./test.sh
+        
+  test-macos:
+    name: Test on macOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        lesson: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    env:
+      CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Conan
+      uses: conan-io/setup-conan@latest
+      
+    - name: Run test for lesson ${{ matrix.lesson }}
+      run: |
+        cd lesson${{ matrix.lesson }}
+        chmod +x test.sh
+        ./test.sh
+        
+  test-windows:
+    name: Test on Windows
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        lesson: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    env:
+      CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Conan
+      uses: conan-io/setup-conan@latest
+      
+    - name: Run test for lesson ${{ matrix.lesson }}
+      shell: cmd
+      run: |
+        cd lesson${{ matrix.lesson }}
+        test.bat 
