@@ -6,7 +6,7 @@ class FormatterRecipe(ConanFile):
     generators = "CMakeToolchain", "CMakeDeps"
 
     def requirements(self):
-        self.requires("fmt/11.0.2")
+        self.requires("fmt/11.2.0")
 
     def build_requirements(self):
         self.tool_requires("cmake/3.31.5")
