@@ -6,3 +6,4 @@ CMakeUserPresets.json
 *conanrun*.sh
 *.bat
 .vscode
+.venv
