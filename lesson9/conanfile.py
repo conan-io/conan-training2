@@ -41,7 +41,7 @@ class helloRecipe(ConanFile):
 
     def requirements(self):
         if self.options.with_fmt:
-            self.requires("fmt/11.0.2")
+            self.requires("fmt/11.2.0")
 
     def generate(self):
         deps = CMakeDeps(self)
