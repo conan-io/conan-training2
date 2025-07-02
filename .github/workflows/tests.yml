@@ -1,0 +1,75 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-linux:
+    name: Test on Linux
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lesson: [1, 2, 3, 4]
+    env:
+      CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Conan
+      uses: conan-io/setup-conan@v1.1.0
+      
+    - name: Run test for lesson ${{ matrix.lesson }}
+      run: |
+        cd lesson${{ matrix.lesson }}
+        chmod +x test.sh
+        ./test.sh
+        
+  test-macos:
+    name: Test on macOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        lesson: [1, 2, 3, 4]
+    env:
+      CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Conan
+      uses: conan-io/setup-conan@v1.1.0
+      
+    - name: Run test for lesson ${{ matrix.lesson }}
+      run: |
+        cd lesson${{ matrix.lesson }}
+        chmod +x test.sh
+        ./test.sh
+        
+  test-windows:
+    name: Test on Windows
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        lesson: [1, 2, 3, 4]
+    env:
+      CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Conan
+      uses: conan-io/setup-conan@v1.1.0
+      
+    - name: Run test for lesson ${{ matrix.lesson }}
+      shell: cmd
+      run: |
+        cd lesson${{ matrix.lesson }}
+        test.bat 

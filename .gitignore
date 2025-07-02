@@ -4,6 +4,7 @@ CMakeUserPresets.json
 */test_package/build
 *conanbuild*.sh
 *conanrun*.sh
-*.bat
+*conanbuild*.bat
+*conanrun*.bat
 .vscode
 .venv
