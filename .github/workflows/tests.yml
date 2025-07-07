@@ -24,7 +24,7 @@ jobs:
       options: --user 0:0
     strategy:
       matrix:
-        lesson: [1, 2, 3, 4, 5, 6]
+        lesson: [1, 2, 3, 4, 5, 6, 8, 9]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
     
@@ -46,7 +46,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        lesson: [1, 2, 3, 4, 6]
+        lesson: [1, 2, 3, 4, 6, 8, 9]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
     
@@ -68,7 +68,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        lesson: [1, 2, 3, 4, 6]
+        lesson: [1, 2, 3, 4, 6, 8, 9]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
     
