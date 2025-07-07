@@ -68,7 +68,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        lesson: [1, 2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16]]
+        lesson: [1, 2, 3, 4, 6, 8, 9, 10, 12, 14, 15, 16]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
     
