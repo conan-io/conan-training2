@@ -8,11 +8,20 @@ on:
   workflow_dispatch:
 
 jobs:
+  pull-docker-image:
+    name: Pull Docker Image
+    runs-on: ubuntu-latest
+    steps:
+    - name: Pull conanio/conan-training image
+      run: docker pull conanio/conan-training
+      
   test-linux:
+    needs: pull-docker-image
     name: Test on Linux
     runs-on: ubuntu-latest
     container:
       image: conanio/conan-training
+      options: --pull-policy=if-not-present
     strategy:
       matrix:
         lesson: [1, 2, 3, 4, 5]
