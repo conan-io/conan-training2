@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Create the package
-conan create . 
+conan create . --build=missing
