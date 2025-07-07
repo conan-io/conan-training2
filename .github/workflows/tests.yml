@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: conanio/conan-training
+      options: --user 0:0
     strategy:
       matrix:
         lesson: [1, 2, 3, 4, 5]
