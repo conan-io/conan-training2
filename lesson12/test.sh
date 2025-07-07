@@ -7,4 +7,4 @@ conan test test_package hello/1.0
 
 # test the already created package for Debug
 # use a profile or you can also use -s="build_type=Debug"
-conan test test_package hello/1.0 --profile=./debug --build=missing
+conan test test_package hello/1.0 -s="build_type=Debug" --build=missing
