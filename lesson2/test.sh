@@ -12,4 +12,4 @@ cmake --build --preset=conan-release
 
 ./build/Release/formatter
 
-conan list "fmt/11.0.2:*" --format=compact
+conan list "fmt/11.2.0:*" --format=compact
