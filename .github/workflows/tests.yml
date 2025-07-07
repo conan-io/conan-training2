@@ -11,9 +11,11 @@ jobs:
   test-linux:
     name: Test on Linux
     runs-on: ubuntu-latest
+    container:
+      image: conanio/conan-training
     strategy:
       matrix:
-        lesson: [1, 2, 3, 4]
+        lesson: [1, 2, 3, 4, 5]
     env:
       CONAN_HOME: ${{ github.workspace }}/.conan_home_${{ matrix.lesson }}
     
