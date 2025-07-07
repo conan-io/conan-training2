@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: conanio/conan-training
-      options: --pull-policy=if-not-present
     strategy:
       matrix:
         lesson: [1, 2, 3, 4, 5]
