@@ -9,7 +9,7 @@ conan export-pkg . -s os='Windows' -s arch='x86_64'
 # Inspect the packages created in the cache
 conan list hello/0.1#:*
 
-cd prebuilt_remote
+cd ../prebuilt_remote
 
 # Create packages with binaries from a remote
 conan create . -s os='Windows' -s arch='x86_64'
