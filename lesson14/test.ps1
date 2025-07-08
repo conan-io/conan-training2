@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -e
+$ErrorActionPreference = 'Stop'
 
 # The structure is based on a call to conan new header_lib -d=name=hello -d=version=1.0
 

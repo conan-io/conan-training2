@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 conan profile detect --force
 conan install . --build=missing
 cmake --list-presets

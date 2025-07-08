@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -e
+$ErrorActionPreference = 'Stop'
 
 # List all the revisions of a given reference in a remote
 conan list "fmt/11.2.0#*" -r=conancenter

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Check how it fails, then change hellolib for hello in the conanfile.py
 # Detect OS and use appropriate sed command
 if [[ "$OSTYPE" == "darwin"* ]]; then

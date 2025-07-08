@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 conan install . --build=missing -pr=debug
 cmake --preset=conan-debug
 cmake --build --preset=conan-debug

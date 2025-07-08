@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # install the dependencies with two profiles, fmt will be built for the raspberry profile
 conan install . --build missing --profile:build=default --profile:host=./profiles/raspberry
 

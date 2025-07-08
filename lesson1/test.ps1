@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 conan profile detect --force
 conan install . --build=missing
 cmake --list-presets

@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -e
+$ErrorActionPreference = 'Stop'
 
 conan create . --build=missing -tf=""
 

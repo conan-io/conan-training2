@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # inspect the vendor folder
 cd prebuilt && tree vendor_hello_library
 

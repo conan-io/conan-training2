@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 conan install . --build=missing
 
 # This version should be the one installed in your system
