@@ -9,7 +9,7 @@ cmake --version
 
 # Windows
 
-build\Release\generators\conanbuild.ps1
+.\build\generators\conanbuild.ps1
 
 cmake --version
 
@@ -17,6 +17,6 @@ cmake --preset=conan-default
 cmake --build --preset=conan-release
 
 # Windows
-build\Release\generators\conanrun.ps1
+.\build\generators\conanrun.ps1
 
 build\Release\formatter 
