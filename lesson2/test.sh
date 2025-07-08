@@ -10,7 +10,7 @@ cmake --build --preset=conan-debug
 conan install . --build=missing --options="*:shared=True"
 cmake --preset=conan-release
 cmake --build --preset=conan-release
-./build/Release/formatter
+# ./build/Release/formatter this would fail without the conanrun
 
 . build/Release/generators/conanrun.sh
 
