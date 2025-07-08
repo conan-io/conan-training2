@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-conan install . --build=missing -pr=debug
+conan install . --build=missing -s="build_type=Debug"
 cmake --preset=conan-default
 cmake --build --preset=conan-debug
 build/Debug/formatter

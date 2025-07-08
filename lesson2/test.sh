@@ -2,7 +2,7 @@
 
 set -e
 
-conan install . --build=missing -pr=debug
+conan install . --build=missing -s="build_type=Debug"
 cmake --preset=conan-debug
 cmake --build --preset=conan-debug
 ./build/Debug/formatter
