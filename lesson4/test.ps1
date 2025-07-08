@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-conan install . --build=missing
+conan install . --build=missing -c:a="tools.env.virtualenv:powershell=pwsh"
 
 # This version should be the one installed in your system
 cmake --version  
@@ -9,7 +9,7 @@ cmake --version
 
 # Windows
 
-build\Release\generators\conanbuild.bat
+build\Release\generators\conanbuild.ps1
 
 cmake --version
 
@@ -17,6 +17,6 @@ cmake --preset=conan-default
 cmake --build --preset=conan-release
 
 # Windows
-build\Release\generators\conanrun.bat
+build\Release\generators\conanrun.ps1
 
 build\Release\formatter 
