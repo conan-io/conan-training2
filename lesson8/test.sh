@@ -3,7 +3,8 @@
 set -e
 
 # Create a template project of a CMake library
-conan new cmake_lib -d name=hello -d version=1.0
+# Files already theer
+# conan new cmake_lib -d name=hello -d version=1.0 --force
 
 # Create the package
 conan create .
