@@ -13,4 +13,5 @@ class helloTestConan(ConanFile):
 
     def test(self):
         if can_run(self):
-            self.run("say", env="conanrun")
+            extension = ".exe" if self.settings.os == "Windows" else ""
+            self.run(f"say{extension}", env="conanrun")
