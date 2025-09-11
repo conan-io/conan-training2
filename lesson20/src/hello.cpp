@@ -118,3 +118,7 @@ void hello_print_vector(const std::vector<std::string> &strings) {
         std::cout << "hello/1.0 " << *it << std::endl;
     }
 }
+
+std::string compose_message(const std::string& build_type, const std::string& extra_info) {
+    return "hello/1.0: Hello World " + build_type + "! (" + extra_info + ")\n";
+}

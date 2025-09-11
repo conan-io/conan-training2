@@ -20,7 +20,7 @@ class helloRecipe(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
-    exports_sources = "CMakeLists.txt", "src/*", "include/*"
+    exports_sources = "CMakeLists.txt", "src/*", "include/*", "tests/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -29,6 +29,9 @@ class helloRecipe(ConanFile):
     def configure(self):
         if self.options.shared:
             self.options.rm_safe("fPIC")
+
+    def build_requirements(self):
+        self.test_requires("gtest/1.17.0")
 
     def layout(self):
         cmake_layout(self)
@@ -43,6 +46,7 @@ class helloRecipe(ConanFile):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+        cmake.test()
 
     def package(self):
         cmake = CMake(self)
