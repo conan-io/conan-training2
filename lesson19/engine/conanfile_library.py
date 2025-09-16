@@ -8,8 +8,8 @@ class Engine(ConanFile):
 
     package_type = "library"
 
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    options = {"shared": [True, False]}
+    default_options = {"shared": False}
 
     def requirements(self):
         self.requires("math/1.0")

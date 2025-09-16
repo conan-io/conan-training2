@@ -8,5 +8,5 @@ class Math(ConanFile):
 
     package_type = "library"
 
-    options = {"shared": [True, False], "fPIC": [True, False], "header_only": [True, False]}
-    default_options = {"shared": False, "fPIC": True, "header_only": False}
+    options = {"shared": [True, False], "header_only": [True, False]}
+    default_options = {"shared": False, "header_only": False}
