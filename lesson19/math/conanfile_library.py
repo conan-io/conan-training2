@@ -15,5 +15,5 @@ class Math(ConanFile):
     default_options = {
         "shared": False,
         "fPIC": True,
-        "header_only": True
+        "header_only": False
     }
