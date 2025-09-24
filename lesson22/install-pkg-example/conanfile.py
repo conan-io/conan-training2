@@ -4,8 +4,8 @@ from conan.tools.files import copy
 
 
 class Conf(ConanFile):
-    name = "companyconf"
-    version = "1.0"
+    name = "myconf"
+    version = "0.1"
     settings = "os"
     package_type = "configuration"
 
