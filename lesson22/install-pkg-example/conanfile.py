@@ -10,10 +10,10 @@ class Conf(ConanFile):
     package_type = "configuration"
 
     def package(self):
-        f = "win" if self.settings.os == "Windows" else "unix"
+        folder = "win" if self.settings.os == "Windows" else "unix"
         copy(
             self,
             "*",
-            src=os.path.join(self.build_folder, "profiles", f),
+            src=os.path.join(self.build_folder, "profiles", folder),
             dst=os.path.join(self.package_folder, "profiles"),
         )
