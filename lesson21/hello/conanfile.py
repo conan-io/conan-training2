@@ -31,7 +31,7 @@ class helloRecipe(ConanFile):
             self.options.rm_safe("fPIC")
 
     def requirements(self):
-        self.requires("fmt/[>=11.0 <11.2]")
+        self.requires("fmt/[>=11.0 <12]")
 
     def layout(self):
         cmake_layout(self)
