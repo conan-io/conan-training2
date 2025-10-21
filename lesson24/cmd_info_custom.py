@@ -13,7 +13,7 @@ version_color = Color.BRIGHT_GREEN
 info_color = Color.BRIGHT_CYAN
 
 def json_export(data):
-    cli_out_write(json.dumps({"cache_path": data}))
+    cli_out_write(json.dumps(data))
 
 @conan_command(group="Custom commands", formatters={"json": json_export, "text": cli_out_write})
 def info_custom(conan_api: ConanAPI, parser, *args):
@@ -55,7 +55,7 @@ def info_custom(conan_api: ConanAPI, parser, *args):
                     
                     package_data = {
                         "name": rref.name,
-                        "version": rref.version,
+                        "version": str(rref.version),
                         "user": rref.user,
                         "channel": rref.channel,
                         "recipe_revision": str(rref.revision),
