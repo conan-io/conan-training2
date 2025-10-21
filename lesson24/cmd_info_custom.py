@@ -21,8 +21,6 @@ def info_custom(conan_api: ConanAPI, parser, *args):
     Shows detailed information about installed packages with customizable output formats.
     """
     parser.add_argument("package", help="Package name to get info for")
-    parser.add_argument("--format", choices=["text", "json"], 
-                       default="text", help="Output format")
     parser.add_argument("--show-deps", action="store_true", 
                        help="Show dependencies and package details")
     parser.add_argument("--remote", action=OnceArgument,
@@ -63,7 +61,6 @@ def info_custom(conan_api: ConanAPI, parser, *args):
                         "recipe_revision": str(rref.revision),
                         "package_id": latest_pkg.package_id,
                         "package_revision": str(latest_pkg.revision),
-                        "timestamp": latest_pkg.timestamp.isoformat() if latest_pkg.timestamp else None,
                         "source": output_source
                     }
                     package_info.append(package_data)
