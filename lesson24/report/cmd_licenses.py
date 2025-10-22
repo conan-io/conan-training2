@@ -14,6 +14,10 @@ def output_default(msg):
                                                      "text": output_default})
 def licenses(conan_api: ConanAPI, parser, *args):
     """
-    Simple command to print "Hello World!" line
+    Simple command to print a message in stdout
     """
-    return {"greet":  "Hello World!"}
+    parser.add_argument('message',
+                        help="Message to print to stdout")
+    args = parser.parse_args(*args)
+
+    return {"greet":  args.message}
