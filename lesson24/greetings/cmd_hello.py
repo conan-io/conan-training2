@@ -1,7 +1,7 @@
 import json
 
 from conan.api.conan_api import ConanAPI
-from conan.api.output import ConanOutput, cli_out_write
+from conan.api.output import cli_out_write
 from conan.cli.command import conan_command
 
 def output_json(msg):
@@ -14,7 +14,7 @@ def output_default(msg):
                                            "text": output_default})
 def hello(conan_api: ConanAPI, parser, *args):
     """
-    Simple command to print a message in stdout
+    Simple command to print a message in stdout.
     """
     parser.add_argument('message',
                         help="Message to print to stdout")
