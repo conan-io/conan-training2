@@ -16,9 +16,9 @@ def output_default(results):
 
 
 @conan_command(
-    group="Misc. Utils", formatters={"json": output_json, "text": output_default}
+    group="Profiles", formatters={"json": output_json, "text": output_default}
 )
-def search_profiles(conan_api: ConanAPI, parser, *args):
+def search(conan_api: ConanAPI, parser, *args):
     """
     Command to search for a string ocurrence inside all Conan profiles.
     """
