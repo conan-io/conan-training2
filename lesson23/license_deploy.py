@@ -8,5 +8,7 @@ def deploy(graph, output_folder, **kwargs):
             graph.root.conanfile,
             "*",
             os.path.join(str(dep.folders.package_folder), "licenses"),
-            os.path.join(output_folder, "licenses", str(dep.ref.name), str(dep.ref.version))
+            os.path.join(
+                output_folder, "licenses", str(dep.ref.name), str(dep.ref.version)
+            ),
         )
