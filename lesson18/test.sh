@@ -5,6 +5,12 @@ set -e
 # Add hello package to editable mode
 conan editable add hello
 
+# List editable packages
+conan editable list
+
+# List all packages (editable packages will be marked)
+conan list "*:*"
+
 cd say
 
 # Try to build src
