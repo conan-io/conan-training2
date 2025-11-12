@@ -10,7 +10,7 @@ cmake --preset=conan-default
 cmake --build --preset=conan-release
 # build/Release/formatter this would fail without the conanrun
 
-./build/generators/conanrun.ps1
+. ./build/generators/conanrun.ps1
 
 build/Release/formatter
 
