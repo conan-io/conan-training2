@@ -2,5 +2,5 @@
 
 set -e
 
-conan create . --build=missing -tf=""
+conan create . --build=missing -tf="" -s="compiler.cppstd=17"
 

@@ -1,4 +1,4 @@
 $ErrorActionPreference = 'Stop'
 
-conan create . --build=missing -tf=""
+conan create . --build=missing -tf="" -s="compiler.cppstd=17"
 
