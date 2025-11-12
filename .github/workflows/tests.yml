@@ -23,6 +23,7 @@ jobs:
       image: conanio/conan-training
       options: --user 0:0
     strategy:
+      fail-fast: false
       matrix:
         lesson: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     env:
@@ -45,6 +46,7 @@ jobs:
     name: Test on macOS
     runs-on: macos-latest
     strategy:
+      fail-fast: false
       matrix:
         lesson: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     env:
@@ -67,6 +69,7 @@ jobs:
     name: Test on Windows
     runs-on: windows-latest
     strategy:
+      fail-fast: false
       matrix:
         lesson: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
     env:
