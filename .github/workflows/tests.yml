@@ -82,5 +82,6 @@ jobs:
     - name: Run test for lesson ${{ matrix.lesson }}
       shell: pwsh
       run: |
+        $PSNativeCommandUseErrorActionPreference = $true
         cd lesson${{ matrix.lesson }}
         ./test.ps1 
