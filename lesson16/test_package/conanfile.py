@@ -9,12 +9,11 @@ class SecureScannerTestRecipe(ConanFile):
 
     def build(self):
         var_cmd = (
-            "echo MY_VAR=%MY_VAR%"
+            "set MY_VAR"
             if self.settings_build.os == "Windows"
             else "echo MY_VAR=$MY_VAR"
         )
         self.run(var_cmd)
 
     def test(self):
-        extension = ".exe" if self.settings_build.os == "Windows" else ""
-        self.run("secure-scanner{} mypath".format(extension))
+        self.run("secure-scanner mypath")

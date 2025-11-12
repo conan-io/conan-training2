@@ -5,12 +5,12 @@ cmake --preset=conan-default
 cmake --build --preset=conan-debug
 build/Debug/formatter
 
-conan install . --build=missing --options="*:shared=True"
+conan install . --build=missing --options="*:shared=True" -c="tools.env.virtualenv:powershell=pwsh"
 cmake --preset=conan-default
 cmake --build --preset=conan-release
 # build/Release/formatter this would fail without the conanrun
 
-./build/generators/conanrun.ps1
+. ./build/generators/conanrun.ps1
 
 build/Release/formatter
 
