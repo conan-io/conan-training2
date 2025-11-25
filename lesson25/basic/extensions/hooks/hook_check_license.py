@@ -1,4 +1,4 @@
 
 def pre_export(conanfile):
-    if not getattr(conanfile, "license", None):
+    if not hasattr(conanfile, "license"):
         conanfile.output.error("Recipe does not have a 'license'")
