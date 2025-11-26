@@ -7,12 +7,6 @@ class helloRecipe(ConanFile):
     version = "1.0"
     package_type = "library"
 
-    # Optional metadata
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of hello package here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
-
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
@@ -28,9 +22,6 @@ class helloRecipe(ConanFile):
     def configure(self):
         if self.options.shared:
             self.options.rm_safe("fPIC")
-
-    def requirements(self):
-        self.requires("fmt/[>=11.0 <12]")
 
     def layout(self):
         cmake_layout(self)
