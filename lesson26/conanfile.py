@@ -38,7 +38,7 @@ class helloRecipe(ConanFile):
         cmake_layout(self)
 
     def requirements(self):
-        self.requires("fmt/12.0.0")
+        self.requires("fmt/11.1.1")
 
     def generate(self):
         deps = CMakeDeps(self)
