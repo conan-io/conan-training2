@@ -6,6 +6,7 @@ class HelloRecipe(ConanFile):
     name = "hello"
     version = "1.0"
     package_type = "library"
+    # license = None  # Removed license for demostration purposes
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
