@@ -2,6 +2,8 @@ from conan import ConanFile
 from conan.tools.cmake import cmake_layout
 
 class FormatterRecipe(ConanFile):
+    name = "formatter"
+    version = "1.0"
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeToolchain", "CMakeDeps"
     # license = None  # Removed license for demostration purposes
