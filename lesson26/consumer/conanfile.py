@@ -5,7 +5,7 @@ class ConsumerRecipe(ConanFile):
     name = "consumer"
     version = "1.0"
 
-    python_requires = "pyreq/0.1"
+    python_requires = "pyreq/[>=1.0 <2.0]"
     python_requires_extend = "pyreq.MyCompanyBase"
 
     # license, author, settings and build() inherited from MyCompanyBase

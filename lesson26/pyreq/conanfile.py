@@ -3,7 +3,7 @@ from conan import ConanFile
 
 class PyReq(ConanFile):
     name = "pyreq"
-    version = "0.1"
+    version = "1.0"
     package_type = "python-require"
 
 
